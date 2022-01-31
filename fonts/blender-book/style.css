@@ -1,0 +1,9 @@
+@font-face {
+    font-family: 'Blender Pro';
+    src: local('Blender Pro Book'), local('Blender-Pro-Book'),
+        url('BlenderPro-Book.woff2') format('woff2'),
+        url('BlenderPro-Book.woff') format('woff'),
+        url('BlenderPro-Book.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+  }
