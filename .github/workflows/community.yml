@@ -1,0 +1,25 @@
+on:
+  fork:
+  push:
+    branches: [main]
+  issues:
+    types: [opened]
+  issue_comment:
+    types: [created]
+  pull_request_target:
+    types: [opened]
+  pull_request_review_comment:
+    types: [created]
+
+jobs:
+  welcome:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v1
+      - uses: EddieHubCommunity/gh-action-community/src/welcome@main
+        with:
+          github-token: ${{ secrets.GITHUB_TOKEN }}
+          issue-message: "<h1>It's great having you contribute to this project</h1> Thank you so much, I appreciate all of you! :sparkles:"
+          pr-message: "<h1>It's great having you contribute to this project</h1> Thank you so much, I appreciate all of you! :sparkles:"
+          footer: 'You can also message me [here](https://twitter.com/prathamesh_117) for any other feedback!
+        Feel free to check out my other handles [here](https://prathamesh-shanbhag.vercel.app)'
