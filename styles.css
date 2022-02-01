@@ -4,9 +4,10 @@
 /* html {
   background: #1e1a20;
 } */
-/* ::-webkit-scrollbar {
+
+::-webkit-scrollbar {
   display: none;
-} */
+}
 :root {
   --color-icon: #535c68;
   --social-icon1: #6cc644;
