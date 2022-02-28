@@ -106,7 +106,8 @@ loader.load(
     })
     modelContainer.add(occlusionScene)
 
-    gltf.scene.scale.set(0.8, 0.8, 0.8)
+    // // Redundant
+    // gltf.scene.scale.set(0.8, 0.8, 0.8)
   },
   undefined,
   console.error
@@ -491,17 +492,33 @@ function updateAsciiRenderSize() {
 
 // Handle Window Resize
 function resizeRenderer() {
-  rippleCanvas.width = rippleCanvas.style.width = window.innerWidth
-  rippleCanvas.height = rippleCanvas.style.height = window.innerHeight
-  canvas.width = canvas.style.width = window.innerWidth
-  canvas.height = canvas.style.height = window.innerHeight
-  updateAsciiRenderSize()
-  // Canvas Height Control
-  renderer.setSize(window.innerWidth, window.innerHeight)
-  mainCamera.aspect = window.innerWidth / window.innerHeight
-  mainCamera.updateProjectionMatrix()
-  occlusionCamera.aspect = mainCamera.aspect
-  occlusionCamera.updateProjectionMatrix()
+  if (window.innerWidth <= 768) {
+    rippleCanvas.width = rippleCanvas.style.width = window.innerWidth / 2
+    rippleCanvas.height = rippleCanvas.style.height = window.innerHeight / 2
+    canvas.width = canvas.style.width = window.innerWidth / 2
+    canvas.height = canvas.style.height = window.innerHeight / 2
+    updateAsciiRenderSize()
+    // Canvas Height Control
+    renderer.setSize(window.innerWidth, window.innerHeight)
+    mainCamera.aspect = window.innerWidth / window.innerHeight
+    mainCamera.updateProjectionMatrix()
+    occlusionCamera.aspect = mainCamera.aspect
+    occlusionCamera.updateProjectionMatrix()
+    modelContainer.scale.set(0.6, 0.6, 0.6)
+  } else if (window.innerWidth >= 768) {
+    rippleCanvas.width = rippleCanvas.style.width = window.innerWidth
+    rippleCanvas.height = rippleCanvas.style.height = window.innerHeight
+    canvas.width = canvas.style.width = window.innerWidth
+    canvas.height = canvas.style.height = window.innerHeight
+    updateAsciiRenderSize()
+    // Canvas Height Control
+    renderer.setSize(window.innerWidth, window.innerHeight)
+    mainCamera.aspect = window.innerWidth / window.innerHeight
+    mainCamera.updateProjectionMatrix()
+    occlusionCamera.aspect = mainCamera.aspect
+    occlusionCamera.updateProjectionMatrix()
+    modelContainer.scale.set(0.8, 0.8, 0.8)
+  }
 }
 window.addEventListener('resize', debounce(resizeRenderer, 50))
 
@@ -515,7 +532,6 @@ modelContainer.position.z += 0.4
 modelContainer.position.y += 0.3
 
 resizeRenderer()
-
 function render() {
   const elapsedTime = clock.getElapsedTime()
   const delta = elapsedTime - previousTime
