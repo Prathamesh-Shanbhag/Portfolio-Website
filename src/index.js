@@ -5,7 +5,7 @@ import { GLTFLoader } from '../three-examples/loaders/GLTFLoader'
 import { EffectComposer } from '../three-examples/postprocessing/EffectComposer'
 import { RenderPass } from '../three-examples/postprocessing/RenderPass'
 import { ShaderPass } from '../three-examples/postprocessing/ShaderPass'
-// import { OrbitControls } from 'three/examples/jsm/controls/OrbitControls.js'
+import { OrbitControls } from 'three/examples/jsm/controls/OrbitControls.js'
 
 import AdditiveShader from './shaders/Additive'
 import ASCIIShader from './shaders/ASCII'
@@ -112,19 +112,20 @@ loader.load(
   console.error
 )
 
-const material = new THREE.MeshToonMaterial({ color: '#ffeded' })
+// Other 3D Models
+// const material = new THREE.MeshToonMaterial({ color: '#ffeded' })
 
-const mesh1 = new THREE.Mesh(new THREE.TorusGeometry(1, 0.4, 16, 60), material)
-const mesh2 = new THREE.Mesh(new THREE.ConeGeometry(1, 2, 32), material)
-const mesh3 = new THREE.Mesh(
-  new THREE.TorusKnotGeometry(0.8, 0.35, 100, 16),
-  material
-)
-// mainScene.add(mesh1, mesh2, mesh3)
+// const mesh1 = new THREE.Mesh(new THREE.TorusGeometry(1, 0.4, 16, 60), material)
+// const mesh2 = new THREE.Mesh(new THREE.ConeGeometry(1, 2, 32), material)
+// const mesh3 = new THREE.Mesh(
+//   new THREE.TorusKnotGeometry(0.8, 0.35, 100, 16),
+//   material
+// )
+// // mainScene.add(mesh1, mesh2, mesh3)
 const objectsDistance = 4
-mesh1.position.y = -objectsDistance * 0
-mesh2.position.y = -objectsDistance * 1
-mesh3.position.y = -objectsDistance * 2
+// mesh1.position.y = -objectsDistance * 0
+// mesh2.position.y = -objectsDistance * 1
+// mesh3.position.y = -objectsDistance * 2
 
 // Generic
 
@@ -180,9 +181,15 @@ let rippleWasRendering = false
 
 const canvas = document.getElementById('app')
 
-// const controls = new OrbitControls(mainCamera, canvas)
+const controls = new OrbitControls(mainCamera, canvas)
 // controls.enableDamping = true
-
+// controls.dampingFactor = 0.25
+controls.panSpeed = 0.1
+controls.maxDistance = 12.0
+controls.minDistance = 12.0
+controls.maxPolarAngle = Math.PI / 2
+controls.minPolarAngle = Math.PI / 2
+controls.rotateSpeed = 0.5
 const linear = (t) => t
 const easeOutQuart = (t) => 1 - --t * t * t * t
 
@@ -456,8 +463,6 @@ window.addEventListener('mousemove', (event) => {
 // }
 // window.addEventListener('mousemove', mousemove)
 
-// Handle Window Resize
-
 function updateAsciiRenderSize() {
   const size = getLowResSize()
 
@@ -484,9 +489,12 @@ function updateAsciiRenderSize() {
   )
 }
 
+// Handle Window Resize
 function resizeRenderer() {
   rippleCanvas.width = rippleCanvas.style.width = window.innerWidth
   rippleCanvas.height = rippleCanvas.style.height = window.innerHeight
+  canvas.width = canvas.style.width = window.innerWidth
+  canvas.height = canvas.style.height = window.innerHeight
   updateAsciiRenderSize()
   // Canvas Height Control
   renderer.setSize(window.innerWidth, window.innerHeight)
@@ -503,7 +511,8 @@ const clock = new THREE.Clock()
 let previousTime = 0
 
 modelContainer.rotation.x += 0.1
-modelContainer.position.z += 0.5
+modelContainer.position.z += 0.4
+modelContainer.position.y += 0.3
 
 resizeRenderer()
 
@@ -521,7 +530,7 @@ function render() {
   cameraGroup.position.y += (parallaxY - cameraGroup.position.y) * 5 * delta
 
   // Object Animation
-  modelContainer.rotation.y += delta * 0.8
+  modelContainer.rotation.y += delta / 2.2
   particles.rotation.y += delta * 0.5
   // particlesGroup.position.x += -delta / 0.5
 
