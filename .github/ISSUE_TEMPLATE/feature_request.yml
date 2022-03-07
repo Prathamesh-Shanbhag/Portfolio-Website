@@ -1,5 +1,5 @@
 name: 💡 General Feature Request
-description: Have a new idea/feature for my Portfolio Website? 
+description: Have a new idea/feature for my Portfolio Website?
 title: '[FEATURE] <description>'
 labels: ['⭐ goal: addition']
 body:
@@ -27,5 +27,5 @@ body:
   - type: markdown
     attributes:
       value: |
-        You can also message me [here](https://twitter.com/prathamesh_117)
-        Feel free to check out my other handles [here](https://prathamesh-shanbhag.vercel.app)
+        You can also message me [here](https://twitter.com/prathamesh_117) for any other feedback!
+        Feel free to reach out to me on my other handles [here](https://prathamesh-shanbhag.vercel.app), for a faster response!

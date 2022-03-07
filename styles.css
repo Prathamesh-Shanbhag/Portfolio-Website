@@ -1,6 +1,11 @@
 @import url('./fonts/blender-bold/style.css');
 /* @import url('./fonts/blender-book/style.css'); */
-
+@font-face {
+  font-family: 'Blender Pro' !important; /* Define the custom font name */
+  src: url('./fonts/blender-bold/BlenderPro-Bold.woff2') format('woff2'),
+    url('./fonts/blender-book/BlenderPro-Book.woff') format('woff'); /* Define where the font can be downloaded */
+  font-display: fallback; /* Define how the browser behaves during download */
+}
 /* html {
   background: #1e1a20;
 } */
@@ -68,7 +73,7 @@ section:nth-child(odd) {
 
 .hero-container {
   display: flex;
-  height: 90vh;
+  height: 80vh;
   position: relative;
   flex-direction: column;
   justify-content: flex-end;
@@ -79,13 +84,13 @@ section:nth-child(odd) {
 
 .hero-title {
   display: inline-block;
-  font-size: 48px;
+  font-size: 50px;
   line-height: 1em;
   opacity: 0;
 }
 .hero-subtitle {
   display: inline-block;
-  font-size: 32px !important;
+  font-size: 22px;
   line-height: 1em;
   opacity: 0;
 }
@@ -95,10 +100,10 @@ section:nth-child(odd) {
   animation-fill-mode: forwards;
 }
 .title-underline {
-  background-image: linear-gradient(90deg, #000, #000);
+  background-image: none;
   background-repeat: no-repeat;
   background-position: 0 100%;
-  background-size: 100% 50%;
+  background-size: 0%;
 }
 
 @keyframes slideInFromBottom {
@@ -112,34 +117,49 @@ section:nth-child(odd) {
     opacity: 1;
   }
 }
-@media screen and (min-width: 768px) {
-  .hero-title {
-    font-size: 72px;
-    line-height: 64px;
-  }
-  .hero-subtitle {
-    font-size: 32px;
-    line-height: 40px;
-  }
-}
-@media screen and (min-width: 500px) {
-  .hero-title {
-    font-size: 64px;
-  }
-  .hero-subtitle {
-    font-size: 48px;
-  }
-}
-
 .links-container {
-  width: 100%;
-  height: 30vh;
+  width: 60%;
+  height: 20vh;
   display: flex;
   align-items: center;
   justify-content: center;
   z-index: -10;
 }
 
+@media screen and (min-width: 500px) {
+  .hero-title {
+    font-size: 68px;
+  }
+  .hero-subtitle {
+    font-size: 28px;
+    line-height: 40px;
+  }
+}
+@media screen and (min-width: 768px) {
+  .icon-link {
+    font-size: 2rem;
+    width: 5rem;
+    height: 6rem;
+  }
+  .links-container {
+    width: 100%;
+    height: 20vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: -10;
+  }
+  .hero-title {
+    font-size: 70px;
+    line-height: 64px;
+  }
+  .title-underline {
+    background-image: linear-gradient(90deg, #000, #000);
+    background-repeat: no-repeat;
+    background-position: 0 100%;
+    background-size: 100% 50%;
+  }
+}
 .icon-list {
   width: 100%;
   max-width: 50rem;
