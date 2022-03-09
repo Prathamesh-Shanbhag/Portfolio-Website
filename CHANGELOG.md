@@ -1,4 +1,4 @@
-# [1.3.0](https://github.com/Prathamesh-Shanbhag/Portfolio-Website/compare/v0.3.0...v1.3.0) (2022-03-09)
+## [1.3.1](https://github.com/Prathamesh-Shanbhag/Portfolio-Website/compare/v0.4.0...v1.3.1) (2022-03-09)
 
 
 ### Bug Fixes
@@ -8,6 +8,7 @@
 * :rocket: Re-Deploy Preview Branch + SEO Meta Add Desc & Keywords ([e09cf59](https://github.com/Prathamesh-Shanbhag/Portfolio-Website/commit/e09cf59821d75a15785d0faaa6c73516886a4d12))
 * Gap in canvas fixed + Model Size on Mobile Devices bumped to 0.5 from 0.3 (Proper Size) ([19dd5ac](https://github.com/Prathamesh-Shanbhag/Portfolio-Website/commit/19dd5aceda8621028084faab5aeed242c939ec01))
 * Gap issue fixed again + Drifitng Pixels Speed reduced as a Epilepsy Measure (May Require further precautions) ([c7bebd1](https://github.com/Prathamesh-Shanbhag/Portfolio-Website/commit/c7bebd1b0c6c9046108585bfb5bd638836270d7e))
+* Title, Subtitle & Model Size & Positioning Fixed for Smaller Devices + Bumped Model Size to 0.57 from 0.50 for smaller devices ([0468830](https://github.com/Prathamesh-Shanbhag/Portfolio-Website/commit/046883032ec7283fd79b8a666f3acf96d2c19548))
 
 
 ### Features
@@ -32,10 +33,6 @@
 
 * :sparkles: Added GitHub Actions for Changelogs + Issues & PR Templates ([479df42](https://github.com/Prathamesh-Shanbhag/Portfolio-Website/commit/479df42a4e6ed1331aa251747208f8150b9ddfd9))
 * :sparkles: Added GitHub Actions for Open Source Labels + Added New PR& Issue Footer Message ([d2a25dd](https://github.com/Prathamesh-Shanbhag/Portfolio-Website/commit/d2a25dd1a854095fd7d48e5249071bc23a1d528d))
-
-
-
-# 0.1.0 (2022-01-31)
 
 
 
