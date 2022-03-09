@@ -491,7 +491,7 @@ function resizeRenderer() {
     mainCamera.updateProjectionMatrix()
     occlusionCamera.aspect = mainCamera.aspect
     occlusionCamera.updateProjectionMatrix()
-    modelContainer.scale.set(0.3, 0.3, 0.3)
+    modelContainer.scale.set(0.5, 0.5, 0.5)
   } else if (window.innerWidth > 500 && window.innerWidth <= 768) {
     rippleCanvas.width = rippleCanvas.style.width = window.innerWidth / 2
     rippleCanvas.height = rippleCanvas.style.height = window.innerHeight / 2

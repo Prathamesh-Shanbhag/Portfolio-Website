@@ -135,7 +135,6 @@ section:nth-child(odd) {
   background: var(--social-icon5);
 }
 
-/* Media Query Affected Classes */
 canvas {
   position: fixed !important;
   top: -5%;
@@ -143,6 +142,7 @@ canvas {
   scroll-behavior: smooth;
   z-index: -5;
 }
+/* Media Query Affected Classes */
 .hero-title {
   display: inline-block;
   font-size: 48px;
@@ -202,13 +202,6 @@ canvas {
   transition: 0.3s cubic-bezier(0.95, 0.32, 0.37, 1.21);
 }
 @media screen and (min-width: 500px) {
-  canvas {
-    position: fixed !important;
-    top: 0;
-    left: 0;
-    scroll-behavior: smooth;
-    z-index: -5;
-  }
   .hero-title {
     font-size: 65px;
   }
@@ -227,13 +220,6 @@ canvas {
   }
 }
 @media screen and (min-width: 769px) {
-  canvas {
-    position: fixed !important;
-    top: 0;
-    left: 0;
-    scroll-behavior: smooth;
-    z-index: -5;
-  }
   .icon-link::before {
     position: absolute;
     margin-top: 0rem;
