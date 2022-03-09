@@ -491,7 +491,7 @@ function resizeRenderer() {
     mainCamera.updateProjectionMatrix()
     occlusionCamera.aspect = mainCamera.aspect
     occlusionCamera.updateProjectionMatrix()
-    modelContainer.scale.set(0.5, 0.5, 0.5)
+    modelContainer.scale.set(0.57, 0.57, 0.57)
   } else if (window.innerWidth > 500 && window.innerWidth <= 768) {
     rippleCanvas.width = rippleCanvas.style.width = window.innerWidth / 2
     rippleCanvas.height = rippleCanvas.style.height = window.innerHeight / 2
@@ -530,6 +530,9 @@ let previousTime = 0
 modelContainer.rotation.x = 0.1
 modelContainer.position.z = 0.4
 modelContainer.position.y = 0.3
+mainCamera.lookAt(modelContainer.position)
+
+console.log(modelContainer.position)
 
 resizeRenderer()
 function render() {
@@ -540,7 +543,7 @@ function render() {
   // Animate Camera (When Projects Sections Added)
   // mainCamera.position.y = (-scrollY / sizes.height) * objectsDistance
 
-  const parallaxX = cursor.x * 0.5
+  const parallaxX = cursor.x * 1.5
   const parallaxY = -cursor.y * 0.5
   cameraGroup.position.x += (parallaxX - cameraGroup.position.x) * 5 * delta
   cameraGroup.position.y += (parallaxY - cameraGroup.position.y) * 5 * delta
