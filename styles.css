@@ -172,7 +172,7 @@ canvas {
   display: flex;
   align-items: center;
   justify-content: center;
-  z-index: 22;
+  z-index: 10;
 }
 
 .icon-link {
@@ -184,7 +184,7 @@ canvas {
   height: 6rem;
   transition: 0.5s linear;
   position: relative;
-  z-index: 1;
+  z-index: 23;
   margin: auto;
 }
 
@@ -207,10 +207,12 @@ canvas {
 @media screen and (min-width: 500px) {
   .hero-title {
     font-size: 65px;
+    margin-bottom: 0rem;
   }
   .hero-subtitle {
     font-size: 35px;
     line-height: 40px;
+    margin-bottom: 0rem;
   }
   .links-container {
     margin-left: 0;
@@ -255,10 +257,12 @@ canvas {
   .hero-title {
     font-size: 75px;
     line-height: 64px;
+    margin-bottom: 0rem;
   }
   .hero-subtitle {
     font-size: 30px;
     line-height: 40px;
+    margin-bottom: 0rem;
   }
   .title-underline {
     background-image: linear-gradient(90deg, #000, #000);
