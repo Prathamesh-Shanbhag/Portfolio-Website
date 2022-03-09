@@ -140,6 +140,7 @@ canvas {
   top: 0;
   left: 0;
   scroll-behavior: smooth;
+  touch-action: scroll;
   z-index: -5;
 }
 /* Media Query Affected Classes */
