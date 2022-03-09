@@ -137,7 +137,7 @@ section:nth-child(odd) {
 
 canvas {
   position: fixed !important;
-  top: -5%;
+  top: 0%;
   left: 0;
   scroll-behavior: smooth;
   z-index: -5;

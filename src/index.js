@@ -547,6 +547,7 @@ function render() {
 
   // Object Animation
   modelContainer.rotation.y += delta / 2.2
+  // Drifting pixels - Speed Now Reduced.(Epilepsy Measure)
   particles.rotation.y += delta * 0.3
   // particlesGroup.position.x += -delta / 0.5
 
