@@ -33,7 +33,7 @@ export default () => ({
 
     float _punctualLightIntensityToIrradianceFactor( const in float lightDistance, const in float cutoffDistance, const in float decayExponent ) {
     	if( decayExponent > 0.0 ) {
-    		return pow( saturate( -lightDistance / cutoffDistance + 1.0 ), decayExponent );
+    		return pow( saturate( -lightDistance / cutoffDistance + 0.9 ), decayExponent );
     	}
     	return 1.0;
     }
@@ -51,7 +51,7 @@ export default () => ({
         addedLights.rgb += pointLights[l].color *
         _punctualLightIntensityToIrradianceFactor(
             dist,
-            pointLights[l].distance,
+            pointLights[l].distance * 0.8,
             pointLights[l].decay * decayModifier
           );
       }
