@@ -77,9 +77,16 @@ renderer.setSize(window.innerWidth, window.innerHeight)
 document.getElementById('app').appendChild(renderer.domElement)
 renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2))
 
-// Load 3D Model
+// switch model code
+// const modelsArray =[]
+// setTimeout(() => {
+//   for (let i = 0; i < modelsArray.length; i++) {
+//     const modelFile = require( modelsArray[i]);
 
+//   }
+// }, 15000);
 const loader = new GLTFLoader()
+// Load 3D Model
 const modelFile = require('../model/cybertruck.glb')
 const modelContainer = new THREE.Group()
 modelContainer.layers.enable(OCCLUSION_LAYER)
@@ -183,14 +190,14 @@ let rippleWasRendering = false
 const canvas = document.getElementById('app')
 
 const controls = new OrbitControls(mainCamera, canvas)
-// controls.enableDamping = true
-// controls.dampingFactor = 0.25
 controls.panSpeed = 0.1
 controls.maxDistance = 12.0
 controls.minDistance = 12.0
 controls.maxPolarAngle = Math.PI / 2
 controls.minPolarAngle = Math.PI / 2
 controls.rotateSpeed = 0.5
+
+// Ripples
 const linear = (t) => t
 const easeOutQuart = (t) => 1 - --t * t * t * t
 
@@ -228,7 +235,7 @@ function renderRipples(delta) {
       grd.addColorStop(1, `rgba(128, 128, 0, 0.5)`)
       grd.addColorStop(
         0.8,
-        `rgba(${ripple.color.x}, ${ripple.color.y}, ${16 * alpha}, ${alpha})`
+        `rgba(${ripple.color.x}, ${ripple.color.y}, ${20 * alpha}, ${alpha})`
       )
       grd.addColorStop(0, `rgba(0, 0, 0, 0)`)
 
@@ -266,13 +273,13 @@ function addRipple(event) {
 }
 window.addEventListener('click', addRipple)
 
-// New Code
-let scrollY = window.scrollY
-let currentSection = 0
-window.addEventListener('scroll', () => {
-  scrollY = window.scrollY
-  //   console.log(scrollY)
-})
+// New Code (Portfolio + Projects)
+// let scrollY = window.scrollY
+// let currentSection = 0
+// window.addEventListener('scroll', () => {
+//   scrollY = window.scrollY
+//   //   console.log(scrollY)
+// })
 
 const particlesCount = 200
 const positions = new Float32Array(particlesCount * 3)
@@ -294,6 +301,7 @@ const particlesMaterial = new THREE.ShaderMaterial(VertexLitParticle())
 const particles = new THREE.Points(particlesGeometry, particlesMaterial)
 mainScene.add(particles)
 
+// Galaxy Particles Code experiment
 // const particleGeometry = new THREE.SphereBufferGeometry(100, 32, 16)
 
 // let _particleSpeeds = []
@@ -431,14 +439,6 @@ effectComposer.addPass(ripplePass)
 
 const finalComposer = new EffectComposer(renderer)
 finalComposer.addPass(asciiPass)
-// function mousemove(e) {
-//   lightCone.position.x = 5 * ((e.clientX / window.innerWidth) * 2 - 1)
-//   backLight.position.x = lightCone.position.x
-//   mousePositionNormalized.set(
-//     e.clientX / window.innerWidth,
-//     e.clientY / window.innerHeight
-//   )
-// }
 
 // Mouse Move
 const cursor = {}
@@ -450,20 +450,7 @@ window.addEventListener('mousemove', (event) => {
   cursor.y = event.clientY / sizes.height - 0.5
   lightCone.position.x = 5 * ((event.clientX / window.innerWidth) * 2 - 1)
   backLight.position.x = lightCone.position.x
-
-  //   console.log(cursor)
 })
-
-// function mousemove(e) {
-//   lightCone.position.x = 5 * ((e.clientX / window.innerWidth) * 2 - 1)
-//   backLight.position.x = lightCone.position.x
-//   mousePositionNormalized.set(
-//     e.clientX / window.innerWidth,
-//     e.clientY / window.innerHeight
-//   )
-// }
-// window.addEventListener('mousemove', mousemove)
-
 function updateAsciiRenderSize() {
   const size = getLowResSize()
 
@@ -492,7 +479,20 @@ function updateAsciiRenderSize() {
 
 // Handle Window Resize
 function resizeRenderer() {
-  if (window.innerWidth <= 768) {
+  if (window.innerWidth <= 500) {
+    rippleCanvas.width = rippleCanvas.style.width = window.innerWidth / 2
+    rippleCanvas.height = rippleCanvas.style.height = window.innerHeight / 2
+    canvas.width = canvas.style.width = window.innerWidth / 2
+    canvas.height = canvas.style.height = window.innerHeight / 2
+    updateAsciiRenderSize()
+    // Canvas Height Control
+    renderer.setSize(window.innerWidth, window.innerHeight)
+    mainCamera.aspect = window.innerWidth / window.innerHeight
+    mainCamera.updateProjectionMatrix()
+    occlusionCamera.aspect = mainCamera.aspect
+    occlusionCamera.updateProjectionMatrix()
+    modelContainer.scale.set(0.5, 0.5, 0.5)
+  } else if (window.innerWidth > 500 && window.innerWidth <= 768) {
     rippleCanvas.width = rippleCanvas.style.width = window.innerWidth / 2
     rippleCanvas.height = rippleCanvas.style.height = window.innerHeight / 2
     canvas.width = canvas.style.width = window.innerWidth / 2
@@ -505,7 +505,7 @@ function resizeRenderer() {
     occlusionCamera.aspect = mainCamera.aspect
     occlusionCamera.updateProjectionMatrix()
     modelContainer.scale.set(0.6, 0.6, 0.6)
-  } else if (window.innerWidth >= 768) {
+  } else if (window.innerWidth > 768) {
     rippleCanvas.width = rippleCanvas.style.width = window.innerWidth
     rippleCanvas.height = rippleCanvas.style.height = window.innerHeight
     canvas.width = canvas.style.width = window.innerWidth
@@ -527,9 +527,9 @@ window.addEventListener('resize', debounce(resizeRenderer, 50))
 const clock = new THREE.Clock()
 let previousTime = 0
 
-modelContainer.rotation.x += 0.1
-modelContainer.position.z += 0.4
-modelContainer.position.y += 0.3
+modelContainer.rotation.x = 0.1
+modelContainer.position.z = 0.4
+modelContainer.position.y = 0.3
 
 resizeRenderer()
 function render() {
@@ -537,8 +537,8 @@ function render() {
   const delta = elapsedTime - previousTime
   previousTime = elapsedTime
 
-  // Animate Camera
-  mainCamera.position.y = (-scrollY / sizes.height) * objectsDistance
+  // Animate Camera (When Projects Sections Added)
+  // mainCamera.position.y = (-scrollY / sizes.height) * objectsDistance
 
   const parallaxX = cursor.x * 0.5
   const parallaxY = -cursor.y * 0.5
@@ -547,7 +547,8 @@ function render() {
 
   // Object Animation
   modelContainer.rotation.y += delta / 2.2
-  particles.rotation.y += delta * 0.5
+  // Drifting pixels - Speed Now Reduced.(Epilepsy Measure)
+  particles.rotation.y += delta * 0.3
   // particlesGroup.position.x += -delta / 0.5
 
   // Scan

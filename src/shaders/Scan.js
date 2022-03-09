@@ -39,7 +39,8 @@ export default () => ({
 
       float scanClamp = clamp(scan, 0.0, 1.0);
 
-      color.r += pow(1.0 - abs(depth-scanClamp), 140.0) * (1.0 - pow(depth, 10.0));
+      color.rgb += pow(1.0 - abs(depth-scanClamp), 140.0) * (1.0 - pow(depth, 10.0));
+      
 
       gl_FragColor = color;
     }
