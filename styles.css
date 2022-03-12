@@ -47,10 +47,13 @@ body {
   position: relative;
   padding-left: 10%;
   padding-right: 10%;
+  outline: none;
   will-change: transform;
   z-index: 11;
 }
 #app {
+  /* outline: none; */
+  /* border: none; */
   z-index: 20;
 }
 section:nth-child(odd) {
@@ -65,6 +68,7 @@ section:nth-child(odd) {
 } */
 
 .hero-container {
+  outline: none;
   display: flex;
   height: 80vh;
   position: relative;
@@ -143,6 +147,8 @@ canvas {
   top: 0;
   left: 0;
   touch-action: auto;
+  outline: none;
+  border: none;
   z-index: -5;
 }
 /* Media Query Affected Classes */
@@ -172,7 +178,7 @@ canvas {
 .links-container {
   /* margin-left: 2.5rem; */
   width: 0%;
-  height: 10vh;
+  height: 11vh;
   display: flex;
   align-items: center;
   justify-content: center;

@@ -28,7 +28,7 @@ const sizes = {
   width: window.innerWidth,
   height: window.innerHeight,
 }
-
+document.styleSheets[0].insertRule('canvas { outline:none; border:none; }', 0)
 // Create Scene + Camera
 
 const mainScene = new THREE.Scene()
