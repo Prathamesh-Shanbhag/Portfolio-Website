@@ -52,8 +52,8 @@ body {
   z-index: 11;
 }
 #app {
-  /* outline: none; */
-  /* border: none; */
+  outline: none;
+  border: none;
   z-index: 20;
 }
 section:nth-child(odd) {
