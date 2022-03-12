@@ -150,7 +150,7 @@ canvas {
   color: #fff;
   display: inline-block;
   font-size: 48px;
-  margin-bottom: 3rem;
+  /* margin-bottom: 3rem; */
   line-height: 1em;
   opacity: 0;
 }
