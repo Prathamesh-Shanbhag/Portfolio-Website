@@ -87,7 +87,7 @@ renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2))
 // }, 15000);
 const loader = new GLTFLoader()
 // Load 3D Model
-const modelFile = require('../model/cybertruck.glb')
+const modelFile = require('../static/model/cybertruck.glb')
 const modelContainer = new THREE.Group()
 modelContainer.layers.enable(OCCLUSION_LAYER)
 mainScene.add(modelContainer)
@@ -184,12 +184,13 @@ const rippleContext = rippleCanvas.getContext('2d')
 const rippleTexture = new THREE.Texture(rippleCanvas)
 rippleTexture.minFilter = THREE.NearestFilter
 rippleTexture.magFilter = THREE.NearestFilter
-
+rippleCanvas
 let rippleWasRendering = false
 
 const canvas = document.getElementById('app')
 
 const controls = new OrbitControls(mainCamera, canvas)
+// controls.target = modelFile
 controls.panSpeed = 0.1
 controls.maxDistance = 12.0
 controls.minDistance = 12.0
@@ -492,6 +493,8 @@ function resizeRenderer() {
     occlusionCamera.aspect = mainCamera.aspect
     occlusionCamera.updateProjectionMatrix()
     modelContainer.scale.set(0.57, 0.57, 0.57)
+    modelContainer.position.set(0, 0, 0.4)
+    console.log(modelContainer.position)
   } else if (window.innerWidth > 500 && window.innerWidth <= 768) {
     rippleCanvas.width = rippleCanvas.style.width = window.innerWidth / 2
     rippleCanvas.height = rippleCanvas.style.height = window.innerHeight / 2
@@ -505,6 +508,7 @@ function resizeRenderer() {
     occlusionCamera.aspect = mainCamera.aspect
     occlusionCamera.updateProjectionMatrix()
     modelContainer.scale.set(0.6, 0.6, 0.6)
+    modelContainer.position.set(0, 0, 0.4)
   } else if (window.innerWidth > 768) {
     rippleCanvas.width = rippleCanvas.style.width = window.innerWidth
     rippleCanvas.height = rippleCanvas.style.height = window.innerHeight
@@ -518,6 +522,7 @@ function resizeRenderer() {
     occlusionCamera.aspect = mainCamera.aspect
     occlusionCamera.updateProjectionMatrix()
     modelContainer.scale.set(0.8, 0.8, 0.8)
+    modelContainer.position.set(0, 0.3, 0.4)
   }
 }
 window.addEventListener('resize', debounce(resizeRenderer, 50))
@@ -528,8 +533,6 @@ const clock = new THREE.Clock()
 let previousTime = 0
 
 modelContainer.rotation.x = 0.1
-modelContainer.position.z = 0.4
-modelContainer.position.y = 0.3
 mainCamera.lookAt(modelContainer.position)
 
 console.log(modelContainer.position)
