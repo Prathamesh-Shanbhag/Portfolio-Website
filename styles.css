@@ -98,8 +98,8 @@ section:nth-child(odd) {
 
 .icon-list {
   width: 100%;
-  max-width: 33rem;
-  padding: 0 1.5rem;
+  max-width: 50rem;
+  padding: 0 2.5rem;
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -178,7 +178,6 @@ canvas {
 
 .links-container {
   /* margin-left: 2.5rem; */
-  width: 0%;
   height: 11vh;
   display: flex;
   align-items: center;
@@ -236,6 +235,15 @@ canvas {
     font-size: 2.3rem;
     width: 6rem;
     height: 6rem;
+  }
+  .icon-list {
+    width: 100%;
+    max-width: 50rem;
+    padding: 0 1.5rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    z-index: 11;
   }
   .links-container {
     margin-left: 0;
