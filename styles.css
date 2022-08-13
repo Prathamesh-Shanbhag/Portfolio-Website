@@ -98,7 +98,7 @@ section:nth-child(odd) {
 
 .icon-list {
   width: 100%;
-  max-width: 38rem;
+  max-width: 33rem;
   padding: 0 1.5rem;
   display: flex;
   justify-content: space-between;
