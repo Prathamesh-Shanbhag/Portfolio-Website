@@ -155,15 +155,16 @@ canvas {
 .hero-title {
   color: #fff;
   display: inline-block;
-  font-size: 2.3rem;
-  margin-bottom: 13rem;
+  font-size: 1.8rem;
+  margin-bottom: 15rem;
   line-height: 1em;
   opacity: 0;
+  width: auto;
 }
 .hero-subtitle {
   color: #fff;
   display: inline-block;
-  font-size: 18px;
+  font-size: 15px;
   margin-bottom: 3rem;
   line-height: 1em;
   opacity: 0;
@@ -214,7 +215,7 @@ canvas {
   transform: scale(0);
   transition: 0.3s cubic-bezier(0.95, 0.32, 0.37, 1.21);
 }
-@media screen and (min-width: 500px) {
+@media screen and (min-width: 550px) {
   canvas {
     position: fixed !important;
     top: 0;
@@ -224,12 +225,17 @@ canvas {
   }
   .hero-title {
     font-size: 65px;
-    margin-bottom: 0rem;
+    margin-bottom: 16rem;
   }
   .hero-subtitle {
     font-size: 35px;
     line-height: 40px;
     margin-bottom: 0rem;
+  }
+  .icon-link {
+    font-size: 2.3rem;
+    width: 6rem;
+    height: 6rem;
   }
   .links-container {
     margin-left: 0;
@@ -241,7 +247,7 @@ canvas {
     z-index: 22;
   }
 }
-@media screen and (min-width: 769px) {
+@media screen and (min-width: 854px) {
   canvas {
     position: fixed !important;
     top: 0;

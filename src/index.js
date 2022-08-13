@@ -480,7 +480,7 @@ function updateAsciiRenderSize() {
 
 // Handle Window Resize
 function resizeRenderer() {
-  if (window.innerWidth <= 500) {
+  if (window.innerWidth <= 550) {
     rippleCanvas.width = rippleCanvas.style.width = window.innerWidth / 2
     rippleCanvas.height = rippleCanvas.style.height = window.innerHeight / 2
     canvas.width = canvas.style.width = window.innerWidth / 2
@@ -495,7 +495,7 @@ function resizeRenderer() {
     modelContainer.scale.set(0.57, 0.57, 0.57)
     modelContainer.position.set(0, 0, 0.4)
     console.log(modelContainer.position)
-  } else if (window.innerWidth > 500 && window.innerWidth <= 768) {
+  } else if (window.innerWidth > 500 && window.innerWidth <= 854) {
     rippleCanvas.width = rippleCanvas.style.width = window.innerWidth / 2
     rippleCanvas.height = rippleCanvas.style.height = window.innerHeight / 2
     canvas.width = canvas.style.width = window.innerWidth / 2
@@ -509,7 +509,7 @@ function resizeRenderer() {
     occlusionCamera.updateProjectionMatrix()
     modelContainer.scale.set(0.6, 0.6, 0.6)
     modelContainer.position.set(0, 0, 0.4)
-  } else if (window.innerWidth > 768) {
+  } else if (window.innerWidth > 854) {
     rippleCanvas.width = rippleCanvas.style.width = window.innerWidth
     rippleCanvas.height = rippleCanvas.style.height = window.innerHeight
     canvas.width = canvas.style.width = window.innerWidth
