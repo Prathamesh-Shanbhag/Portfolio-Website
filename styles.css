@@ -155,15 +155,15 @@ canvas {
 .hero-title {
   color: #fff;
   display: inline-block;
-  font-size: 48px;
-  /* margin-bottom: 3rem; */
+  font-size: 2.3rem;
+  margin-bottom: 13rem;
   line-height: 1em;
   opacity: 0;
 }
 .hero-subtitle {
   color: #fff;
   display: inline-block;
-  font-size: 20px;
+  font-size: 18px;
   margin-bottom: 3rem;
   line-height: 1em;
   opacity: 0;
@@ -187,7 +187,7 @@ canvas {
 
 .icon-link {
   display: inline-flex;
-  font-size: 2.3rem;
+  font-size: 1.8rem;
   text-decoration: none;
   color: var(--color-icon);
   width: 5rem;
