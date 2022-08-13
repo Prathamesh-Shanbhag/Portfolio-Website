@@ -98,7 +98,7 @@ section:nth-child(odd) {
 
 .icon-list {
   width: 100%;
-  max-width: 50rem;
+  max-width: 38rem;
   padding: 0 1.5rem;
   display: flex;
   justify-content: space-between;
@@ -155,8 +155,8 @@ canvas {
 .hero-title {
   color: #fff;
   display: inline-block;
-  font-size: 1.8rem;
-  margin-bottom: 15rem;
+  font-size: 2.6rem;
+  margin-bottom: 20rem;
   line-height: 1em;
   opacity: 0;
   width: auto;
@@ -164,7 +164,7 @@ canvas {
 .hero-subtitle {
   color: #fff;
   display: inline-block;
-  font-size: 15px;
+  font-size: 1.5rem;
   margin-bottom: 3rem;
   line-height: 1em;
   opacity: 0;
@@ -224,7 +224,7 @@ canvas {
     z-index: -5;
   }
   .hero-title {
-    font-size: 65px;
+    font-size: 4.063rem;
     margin-bottom: 16rem;
   }
   .hero-subtitle {
@@ -254,6 +254,15 @@ canvas {
     left: 0;
     touch-action: auto;
     z-index: -5;
+  }
+  .icon-list {
+    width: 100%;
+    max-width: 50rem;
+    padding: 0 1.5rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    z-index: 11;
   }
   .icon-link::before {
     position: absolute;
@@ -285,7 +294,7 @@ canvas {
     z-index: 22;
   }
   .hero-title {
-    font-size: 75px;
+    font-size: 4.688rem;
     line-height: 64px;
     margin-bottom: 0rem;
   }
