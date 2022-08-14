@@ -98,7 +98,7 @@ section:nth-child(odd) {
 
 .icon-list {
   width: 100%;
-  max-width: 50rem;
+  max-width: 32rem;
   padding: 0 1.5rem;
   display: flex;
   justify-content: space-between;
@@ -155,15 +155,16 @@ canvas {
 .hero-title {
   color: #fff;
   display: inline-block;
-  font-size: 48px;
-  /* margin-bottom: 3rem; */
+  font-size: 2.7rem;
+  margin-bottom: 20rem;
   line-height: 1em;
   opacity: 0;
+  width: auto;
 }
 .hero-subtitle {
   color: #fff;
   display: inline-block;
-  font-size: 20px;
+  font-size: 1.7rem;
   margin-bottom: 3rem;
   line-height: 1em;
   opacity: 0;
@@ -187,10 +188,11 @@ canvas {
 
 .icon-link {
   display: inline-flex;
-  font-size: 2.3rem;
+  font-size: 1.8rem;
   text-decoration: none;
+padding-left: 0.7rem;
   color: var(--color-icon);
-  width: 5rem;
+  width: 4.3rem;
   height: 6rem;
   transition: 0.5s linear;
   position: relative;
@@ -214,7 +216,7 @@ canvas {
   transform: scale(0);
   transition: 0.3s cubic-bezier(0.95, 0.32, 0.37, 1.21);
 }
-@media screen and (min-width: 500px) {
+@media screen and (min-width: 550px) {
   canvas {
     position: fixed !important;
     top: 0;
@@ -223,13 +225,28 @@ canvas {
     z-index: -5;
   }
   .hero-title {
-    font-size: 65px;
-    margin-bottom: 0rem;
+    font-size: 4.063rem;
+    margin-bottom: 16rem;
   }
   .hero-subtitle {
     font-size: 35px;
     line-height: 40px;
     margin-bottom: 0rem;
+  }
+  .icon-link {
+    font-size: 2.3rem;
+    padding-left: 0;
+    width: 5.1rem;
+    height: 6rem;
+  }
+   .icon-list {
+    width: 100%;
+    max-width: 50rem;
+    padding: 0 1.5rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    z-index: 11;
   }
   .links-container {
     margin-left: 0;
@@ -241,13 +258,22 @@ canvas {
     z-index: 22;
   }
 }
-@media screen and (min-width: 769px) {
+@media screen and (min-width: 854px) {
   canvas {
     position: fixed !important;
     top: 0;
     left: 0;
     touch-action: auto;
     z-index: -5;
+  }
+  .icon-list {
+    width: 100%;
+    max-width: 50rem;
+    padding: 0 1.5rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    z-index: 11;
   }
   .icon-link::before {
     position: absolute;
@@ -266,6 +292,7 @@ canvas {
   }
   .icon-link {
     font-size: 3rem;
+    padding-left: 0;
     width: 6rem;
     height: 6rem;
   }
@@ -279,7 +306,7 @@ canvas {
     z-index: 22;
   }
   .hero-title {
-    font-size: 75px;
+    font-size: 4.688rem;
     line-height: 64px;
     margin-bottom: 0rem;
   }
