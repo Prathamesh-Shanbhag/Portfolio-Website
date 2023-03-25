@@ -1,3 +1,12 @@
+## [1.4.6](https://github.com/Prathamesh-Shanbhag/Portfolio-Website/compare/v1.4.5...v1.4.6) (2023-03-25)
+
+
+### Bug Fixes
+
+* Updated Instagram Username & Links ([cdfc97c](https://github.com/Prathamesh-Shanbhag/Portfolio-Website/commit/cdfc97c9b1e8a1f5ebc87893d23178a6e901f08f))
+
+
+
 ## [1.4.5](https://github.com/Prathamesh-Shanbhag/Portfolio-Website/compare/v1.4.4...v1.4.5) (2022-08-14)
 
 
@@ -24,15 +33,6 @@
 
 
 ## [1.4.3](https://github.com/Prathamesh-Shanbhag/Portfolio-Website/compare/v0.4.6...v1.4.3) (2022-08-09)
-
-
-
-## [0.4.6](https://github.com/Prathamesh-Shanbhag/Portfolio-Website/compare/v1.4.2...v0.4.6) (2022-08-09)
-
-
-### Bug Fixes
-
-* Failing Workflow due to unexpected stream end ([66c3584](https://github.com/Prathamesh-Shanbhag/Portfolio-Website/commit/66c3584ac2b7b6fcf7e0b94d4027d0f604f71633))
 
 
 
